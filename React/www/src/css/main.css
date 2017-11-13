@@ -37,3 +37,6 @@ div.demo {
 	position: absolute;
 	background-color: #FFF;
 }
+.bgtest{
+	background-image: url('../images/bg.jpg')
+}

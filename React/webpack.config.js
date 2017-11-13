@@ -40,32 +40,32 @@ pageArr.forEach((page) => {
 
 
 var configModule = {
-    loaders: [
-      {
-        test: /\.json$/,
-        loader: "json"
-      },
-      {
-        test: /\.jsx$|\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        plugins:['transform-runtime'],
-        query: {
-          presets: ['env', 'react', 'stage-0']
-        }
-      },
-      {test: /\.(png|jpe?g|gif|svg)(\?.*)?$/, loader: "url?limit=8192&name=imgs/[hash:8].[name].[ext]"},
-      {test: /\.css$|\.less$/, loader: 'style-loader!css-loader!less-loader'},
-      {test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/, loader:"url?limit=8192&name=fonts/[hash:8].[name].[ext]"}
-    ]
-  }
+  loaders: [
+    {
+      test: /\.json$/,
+      loader: "json"
+    },
+    {
+      test: /\.jsx$|\.js$/,
+      loader: 'babel-loader',
+      exclude: /node_modules/,
+      plugins:['transform-runtime'],
+      query: {
+        presets: ['env', 'react', 'stage-0']
+      }
+    },
+    {test: /\.(png|jpe?g|gif|svg)(\?.*)?$/, loader: "url?limit=8192&name=imgs/[hash:8].[name].[ext]"},
+    {test: /\.css$|\.less$/, loader: 'style-loader!css-loader!less-loader'},
+    {test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/, loader:"url?limit=8192&name=fonts/[hash:8].[name].[ext]"}
+  ]
+}
 
 module.exports = {
   entry: Entry,
   output: {
     path: './www/dist/',
     filename: './[name]/js/[name].js',
-    chunkFilename: '[name].js'
+    chunkFilename: '[name].js',
   },
   resolveLoader: {
     root: path.join(__dirname, 'node_modules')
