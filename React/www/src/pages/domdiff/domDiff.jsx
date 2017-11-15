@@ -43,11 +43,11 @@ var Wrapper = React.createClass({
   shape1: function() {
     return (
       <Root>
-        <A>
-          <B />
-          <C />
+        <A myNodeName="A">
+          <B myNodeName="B"/>
+          <C myNodeName="C"/>
         </A>
-        <D />
+        <D myNodeName="D"/>
       </Root>
     );
   },
@@ -55,11 +55,11 @@ var Wrapper = React.createClass({
   shape2: function() {
     return (
       <Root>
-        <A>
-          <B />
+        <A myNodeName="A">
+          <B myNodeName="B"/>
         </A>
-        <D>
-          <C />
+        <D myNodeName="D">
+          <C myNodeName="C"/>
         </D>
       </Root>
     );
@@ -95,8 +95,8 @@ var Wrapper = React.createClass({
     return (
       <Root>
         <A>
-          <B  />
-          <C  />
+          <B key="B"/>
+          <C key="C"/>
         </A>
       </Root>
     );
@@ -106,13 +106,23 @@ var Wrapper = React.createClass({
     return (
       <Root>
         <A>
-          <C  />
-          <B  />
+          <C key="C"/>
+          <B key="B"/>
         </A>
       </Root>
     );
   },
   
+  shape7: function(){
+    return (
+      <Root>
+        <A>
+          <C key="C"/>
+          <D key="D"/>
+        </A>
+      </Root>
+    )
+  },
   render: function() {
     if (this[this.props.shape]) {
       return this[this.props.shape]();

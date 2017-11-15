@@ -19,7 +19,7 @@ var configPlugins = [
   new CleanWebpackPlugin(
     ['dist/*'],
     {
-      root: path.resolve(__dirname, './www'), //根目录
+      root: path.resolve(__dirname, '../'), //根目录
       verbose:true,//开启控制台输出信息
       dry: false//启用删除文件
     }
@@ -63,9 +63,10 @@ var configModule = {
 module.exports = {
   entry: Entry,
   output: {
-    path: './www/dist/',
-    filename: './[name]/js/[name].js',
+    path: path.resolve(__dirname, '../dist/'),
+    filename: '[name]/[name].js',
     chunkFilename: '[name].js',
+    publicPath: './../'
   },
   resolveLoader: {
     root: path.join(__dirname, 'node_modules')
