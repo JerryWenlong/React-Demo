@@ -16,6 +16,7 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" type="text/css" href="css/myStyle.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -43,12 +44,12 @@
 				<section>
 					<h1>React</h1>
 					<ul>
-						<li>Interduce</li>
+						<li>Introduce</li>
 						<li>React DOM Diff</li>
 						<li>Redux</li>
 					</ul>
 					<p>
-						<small>Created by <a>孟文龙</a> / <a>@vphotos</a></small>
+						<small class="fr">Created by <a>孟文龙</a> / <a>@vphotos</a></small>
 					</p>
 				</section>
 				
@@ -65,11 +66,13 @@
 					
 					<!-- 特点 -->
 					<section>
-						<h6>1.声明式的(Declarative)</h6>
+						<h6>1.声明式渲染(Declarative)</h6>
 						<p>
 							React可以轻松创建交互式用户界面。 为应用程序中的每个状态设计简单的视图，当数据更改时，React将有效地更新和渲染正确的组件。
 							声明性视图使您的代码更可预测，更易于调试。
 						</p>
+						<!-- 个人理解 -->
+						<p class="fragment">所谓声明式就是把整个渲染过程归纳抽离出来,让我们更关注描述我们想要什么,like:组件渲染的生命周期</p>
 					</section>
 					<section>
 						<h6>2.组件式的(Component-Based)</h6>
@@ -77,6 +80,7 @@
 							构建管理自己状态的封装组件，然后将其组合成复杂的UI。
 							由于组件逻辑是用JavaScript而不是模板编写的，因此可以通过应用程序轻松传递丰富的数据，并将状态保留在DOM之外。
 						</p>
+						<!-- 个人理解 最基本的就是组件-->
 					</section>
 				</section>
 
@@ -141,8 +145,15 @@ React.createElement(
 						</script>
 					</section>
 
+				</section>
 
-
+				<section>
+					<h3>react render渲染的几种情况</h3>
+					<ul>
+						<li><p><small>1. 首次加载</small></p></li>
+						<li><p><small>2. setState改变组件内部state。(注意： 此处是说通过setState方法改变。)</small></p></li>
+						<li><p><small>3. 接受到新的props</small></p></li>
+					</ul>
 				</section>
 
 				<section>
