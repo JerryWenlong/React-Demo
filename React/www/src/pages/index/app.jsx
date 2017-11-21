@@ -78,22 +78,6 @@ class MyComponent extends React.Component {
   	// 	alert(err)
   	// }
   }
-  componentDidMount(){
-  	// console.log(this.refs.myTextInput.value)
-  }
-
-  componentWillUpdate(nextProps, nextState){
-  	// console.log("componentWillUpdate")
-  	
-  }
-  componentDidUpdate(prevProps, prevState){
-  	// console.log("componentDidUpdate")
-  	
-  }
-  componentWillReceiveProps(nextProps){
-  	// console.log("componentWillReceiveProps")
-  	
-  }
   shouldComponentUpdate(nextProps, nextState){
   	// if(nextState.myName == this.state.myName && nextState.inputValue == this.state.inputValue){
   	// 	console.log('inputValue2 equals name, no need update');
@@ -103,11 +87,6 @@ class MyComponent extends React.Component {
   	// }
   	return true
   }
-  componentWillUnmount(){
-  	console.log("componentWillUnmount")
-  	// debugger
-  }
-
 
 	render(){
 		let buttonName = "click1";

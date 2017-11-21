@@ -122,6 +122,15 @@ React.createElement(
 						</script>
 					</section>
 
+					<section>
+						<p>JSX Prevents Injection Attacks</p>
+						<p>
+							By default, React DOM escapes any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that’s not explicitly written in your application. Everything is converted to a string before being rendered. This helps prevent XSS (cross-site-scripting) attacks.
+						</p>
+						<!-- 默认情况下，React DOM在渲染之前转义嵌入在JSX中的任何值。 因此，它可以确保您永远不会注入任何未明确写入您的应用程序的东西。 在呈现之前，所有内容都被转换为字符串。 这有助于防止XSS（跨站点脚本）攻击。 -->
+
+					</section>
+
 					<section data-markdown>
 						<script type="text/template">
 							
@@ -144,17 +153,58 @@ React.createElement(
 							```
 						</script>
 					</section>
+					
+					<section>
+						<p>"React elements are immutable. Once you create an element, you can’t change its children or attributes. An element is like a single frame in a movie: it represents the UI at a certain point in time."</p>
+						<p>设计 React 的核心前提是认为 UI 只是把数据通过映射关系变换成另一种形式的数据。同样的输入必会有同样的输出。</p>
+						<p>"the only way to update the UI is to create a new element, and pass it to ReactDOM.render()."</p>
+					</section>
+					
+					<section>
+						<p>demo2</p>
+					</section>
 
+<!-- 					<section>
+						<h3>react render渲染的几种情况</h3>
+						<ul>
+							<li><p><small>1. 首次加载</small></p></li>
+							<li><p><small>2. setState改变组件内部state。(注意： 此处是说通过setState方法改变。)</small></p></li>
+							<li><p><small>3. 接受到新的props</small></p></li>
+						</ul>
+					</section> -->
+					
 				</section>
 
 				<section>
-					<h3>react render渲染的几种情况</h3>
-					<ul>
-						<li><p><small>1. 首次加载</small></p></li>
-						<li><p><small>2. setState改变组件内部state。(注意： 此处是说通过setState方法改变。)</small></p></li>
-						<li><p><small>3. 接受到新的props</small></p></li>
-					</ul>
+					<h3>Components and Props</h3>
+					<p>"Whether you declare a component as a function or a class, it must never modify its own props."</p>
+					<p>See demo3</p>
 				</section>
+				
+				<section>
+					<h3>State and Lifecycle</h3>
+					<p>See demo4</p>
+					<p>So far we have only learned one way to update the UI.</p>
+				</section>
+
+				<section>
+					<h3>Converting a Function to a Class</h3>
+					<p>You can convert a functional component like Clock to a class in five steps:</p>
+					<ol>
+						<li>1.Create an ES6 class, with the same name, that extends React.Component.</li>
+						<li>2.Add a single empty method to it called render().</li>
+						<li>3.Move the body of the function into the render() method.</li>
+						<li>4.Replace props with this.props in the render() body.</li>
+						<li>5.Delete the remaining empty function declaration.</li>
+					</ol>
+				</section>
+
+				<section>
+					<img src="./react_img/lifecycle.png" style="width: 500px;">
+				</section>
+
+				
+
 
 				<section>
 					<section>
